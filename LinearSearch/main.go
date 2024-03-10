@@ -3,20 +3,21 @@ package main
 import "fmt"
 
 func main() {
-	arr:=[]int{1,6,2,8,3,6,4,5,9,10}
-	target:=7
-	res:=LineraSearch(arr,target)
-	if res!=0{
-		fmt.Println("target Found in the array")
-	}else{
+	arr := []int{10, 9, 8, 7, 6, 5, 4, 3, 2, 1}
+	target := 1
+
+	index, found := LineraSearch(arr, target)
+	if found {
+		fmt.Println("target Found in the array at :", index)
+	} else {
 		fmt.Println("target NOT Found in the array")
 	}
 }
-func LineraSearch(arr[]int,target  int)int{
-	for v:=range arr{
-		if v==target{
-			return v
+func LineraSearch(arr []int, target int) (int, bool) {
+	for i, value := range arr {
+		if value == target {
+			return i, true
 		}
 	}
-	return 0
+	return -1, false
 }
