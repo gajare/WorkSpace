@@ -1,10 +1,6 @@
 package main
 
 import "fmt"
-<<<<<<< HEAD
-
-=======
->>>>>>> 906652d (queue)
 type Queue struct {
 	data []int
 }
