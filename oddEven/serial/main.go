@@ -12,7 +12,7 @@ func Odd(ch chan int) {
 	for i := 1; i < 10; i += 2 {
 		ch <- i
 		fmt.Println(" odd :", i)
-		<-ch
+		<-ch	//wait for receving the value
 	}
 }
 
@@ -21,7 +21,7 @@ func Even(ch chan int) {
 	for i := 2; i <= 10; i += 2 {
 		<-ch
 		fmt.Println("even :", i)
-		ch <- i
+		ch <- i					//send value that waiting for
 	}
 }
 func main() {
